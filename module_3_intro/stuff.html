@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheapGPT</title>
+    <link rel="stylesheet" href="styleforsite.css">
+</head>
+<body>
+    <header>
+        <select class="dropdown"name="CheapGPT" id="dropdown">
+            <option value="CheapGPT">CheapGPT</option>
+            <option value="CheapGPT Pl">CheapGPT Plus</option>
+        </select>
+
+        <button class="GetPlusButton" > Get Plus</button>
+        <button class="Text"><img src="https://www.clipartmax.com/png/full/214-2142277_speech-bubble-with-text-lines-free-icon-text-icon.png" alt="" width="30"></button>
+    </header>
+    <nav onclick="ToggleNav()">
+            <img class="imagechanger" src="https://gimgs2.nohat.cc/thumb/f/640/open-ai-logo-png-transparent-background-chatgpt--68fadfca37.jpg" alt="Logo" style="width:30px" >
+            <ul >
+                <li class="navhidden"><a href="#">Home</a></li>
+                <li class="navhidden"><a href="#">About</a></li>
+                <li class="navhidden"><a href="#">Services</a></li>
+                <li class="navhidden"><a href="#">Contact</a></li>
+            </ul>
+    </nav>
+    <script>
+        function ToggleNav() {
+            const nav = document.querySelector('nav');
+            const navHiddenItems = document.querySelectorAll('.navhidden');
+            const imagechanger = document.querySelector('.imagechanger');
+            if (nav.style.width === '150px') {
+                nav.style.width = '40px';
+                nav.style.backgroundColor = 'white';
+                navHiddenItems.forEach(item => item.style.opacity = '0');
+                
+
+            } else {
+                navHiddenItems.forEach(item => item.style.opacity = '1');
+                nav.style.width = '150px';
+                nav.style.backgroundColor = '#EFEFEF';
+                
+            }
+       
+        }
+        function MoveTextArea() {
+            const text = document.querySelector('.section');
+            text.style.display = 'none';
+        }
+</script>
+    <section class="section">
+        Ready when you are.
+    </section>
+    <textarea class="TextArea" onclick="MoveTextArea()"name="" id="" >Ask Anything</textarea>
+</body>
+</html>

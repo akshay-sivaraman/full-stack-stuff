@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Customer</title>        
+    </head>
+    <body>
+        <h1>
+            Customer
+            <!-- HTML5 -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16"> <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/> </svg>
+        </h1>
+        <p>
+            <h2>Create/Update Customer</h2>
+            <form>
+                <table border="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td width="20%"><b>Cid</b></td>
+                            <!-- HTML5 -->
+                            <td width="80%"><input type="text" placeholder="Enter customer id" required="true" id="Cid" name="Cid" style="width: 300px"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Cname</b></td>
+                            <!-- HTML5 -->
+                            <td><input type="text" placeholder="Enter customer name"  required="true" id="Cname" name="Cname" style="width: 300px"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Cgender</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <input type="radio" required="true" name="Cgender" id="Cgender_M" value="M" /> Male <input type="radio" required="true" name="Cgender" id="Cgender_F" value="F" /> Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Cdob</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <input type="date" id="Cdob" name="Cdob" required="true" min="1990-01-01" max="2025-10-01" />
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td colspan="2" style="text-align: center;"><input type="reset" value="Clear" /> <input type="submit" value="Create/Update" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </p>
+        <hr />
+        <p>
+            <h2>View All Customers</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Cid</th>
+                        <th>Cname</th>
+                        <th>Cgender</th>
+                        <th>Cdob</th>                        
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C001</td>
+                        <td>John Smith</td>
+                        <td>M</td>
+                        <td>1990-05-15</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>C002</td>
+                        <td>Jane Doe</td>
+                        <td>F</td>
+                        <td>1985-08-23</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>C003</td>
+                        <td>Michael Johnson</td>
+                        <td>M</td>
+                        <td>-</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>C004</td>
+                        <td>Emily Brown</td>
+                        <td>F</td>
+                        <td>-</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>C005</td>
+                        <td>David Wilson</td>
+                        <td>M</td>
+                        <td>1995-07-07</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">
+                            ......
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <hr /
+        <p>
+            <a href="./index.html">Home</a>
+        </p>
+    </body>
+</html>

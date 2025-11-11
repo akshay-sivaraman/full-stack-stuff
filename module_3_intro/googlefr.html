@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows:  5px 30px  50px 20px 10px 200px auto 10px ;
+        }
+        .mainheader {
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: auto auto 70% auto auto auto;
+            grid-gap: 5px;
+        }
+        footer {
+            grid-row: 7;
+        }
+        .footerbutton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+        }
+        .footerbutton:hover {
+            background-color: #e8e8e8;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+            padding: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+                footer{
+            border-top:1px solid #eee;
+            padding:12px 24px;
+            font-size:14px;
+            color:var(--muted);
+            width: 100%;
+            display:flex;
+            position: absolute;
+            bottom: 0;
+            justify-content:space-between;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+    
+        .search-row{
+            width: min(90%, 640px);
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            background: #fff;
+            border:1px solid var(--input-border);
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            padding:8px 14px;
+            border-radius:24px;
+            gap:8px;
+            resize: none;
+            font-size: large;            
+        }
+        .searchbutton{
+            margin: 5px;
+            background-color: #f9f9f9;
+            border:1px solid var(--btn-border);
+            padding:10px 16px;
+            border-radius:4px;
+            font-size:14px;
+            cursor:pointer;
+            color:#2c2f31;
+        }
+        .searchbutton:hover {
+            box-shadow: #b3b1b1b0 1px 1px 1px 1px;
+        }
+        /* .AccountDisplayArea{
+            display: grid;
+            grid-row: repeat(13, auto);
+            position: absolute;
+            top: 70px;
+            right: 40px;
+            width: 50%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+            border:#2c2f31 1px solid;
+            border-radius: 15px;
+            height: 60%;
+        } */
+         .AccoutnDisplayArea{
+            display: none;
+            opacity: 0;
+         }
+        .accountheader{
+            display: flex;
+            height: 30px;
+            justify-content: center;
+    
+            padding: 10px;
+            border-bottom: #2c2f31 1px solid;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function TextBoxSelected() {
+            alert("oops i havent coded this part yet");
+        }
+        function AccountSettings() {
+            alert("oops i havent coded this part yet");
+            AccountInfo = document.getElementById("AccountDetails");
+            AccountInfo.style.display = "grid";
+            AccountInfo.style.gridTemplateRows = "repeat(13, auto)";
+            AccountInfo.style.position = "absolute";
+            AccountInfo.style.top = "70px";
+            AccountInfo.style.right = "40px";
+            AccountInfo.style.width = "50%";
+            AccountInfo.style.textAlign = "center";
+            AccountInfo.style.fontFamily = "Arial, Helvetica, sans-serif";
+            AccountInfo.style.marginTop = "10px";
+            AccountInfo.style.border = "#2c2f31 1px solid";
+            AccountInfo.style.borderRadius = "15px";
+            AccountInfo.style.height = "60%";
+            AccountInfo.style.backgroundColor = "red";
+        }
+    </script>
+</head>
+<body>
+    <header class="mainheader">
+        <a style="grid-column: 1;" href="https://about.google/?fg=1&utm_source=google-SG&utm_medium=referral&utm_campaign=hp-header">About</a>
+        <a style="grid-column: 2;" href="https://store.google.com/sg/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-GB&pli=1">Store</a>
+        <a style="grid-column: 6;" href="https://mail.google.com/mail/&ogbl">Gmail</a>
+        <a style="grid-column: 7;" href="https://www.google.com/imghp?hl=en&ogbl">Images</a>
+        <button class="footerbutton" style="grid-column: 8;" onclick="pass"><img src="Google_Labs_Flask_Icon_Black.width-500.format-webp.webp" height="15px"></button>
+        <button class="footerbutton" style="grid-column: 9;" onclick="pass"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg" height="15px"></button>
+        <button class="footerbutton" style="grid-column: 10;" onclick="AccountSettings()"><img src="https://wormax2.io/images2/progress_head.png" height="30px"></button>
+    </header>
+    <main style="grid-row: 4; text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="">
+    </main>
+    <textarea onclick="TextBoxSelected()" class ="search-row" style="grid-row: 6; width: 50%; height: 15%;margin: auto; display: block;" placeholder="Search or type a URL"></textarea>
+    <div style="grid-row: 7; text-align: center; margin-top: 10px;">
+        <button class="searchbutton">Google Search</button>
+        <button class="searchbutton"> I'm Feeling Lucky</button>
+    </div>
+    <div id="AccountDetails">
+        <header">
+                       
+
+        </header>
+        
+    </div>
+    <footer >
+        <a href="https://ads.google.com/intl/en_sg/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Advertising</a>
+        <a href="https://www.google.com.sg/services/?fg=1&utm_source=google-SG&utm_medium=referral&utm_campaign=hp-footer">Business</a>
+        <a href="https://www.google.com/intl/en_sg/about/products?fg=1&utm_source=google-SG&utm_medium=referral&utm_campaign=hp-footer">Privacy</a>
+        <a href="https://policies.google.com/privacy?hl=en-SG&fg=1">Terms</a>
+        <a href="https://www.google.com.sg/preferences?hl=en&fg=1">Settings</a>
+    </footer>
+     
+</body>
+</html>

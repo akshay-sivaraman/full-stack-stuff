@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Google — Mock</title>
+    <style>
+        :root{
+            --bg:#fff;
+            --muted:#70757a;
+            --input-border:#dfe1e5;
+            --btn-bg:#f8f9fa;
+            --btn-border:#f2f2f2;
+        }
+        html,body{
+            height:100%;
+            margin:0;
+            background:var(--bg);
+            font-family: Arial, Helvetica, sans-serif;
+            color:#202124;
+        }
+        .page{
+            min-height:100%;
+            display:flex;
+            flex-direction:column;
+        }
+        main{
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:40px 16px;
+        }
+        .center{
+            text-align:center;
+            width:100%;
+        }
+        .logo{
+            font-weight:700;
+            font-size:96px;
+            letter-spacing: -4px;
+            margin-bottom:24px;
+            line-height:1;
+            user-select:none;
+        }
+        .logo .g1{ color:#4285F4; } /* blue */
+        .logo .o1{ color:#DB4437; } /* red */
+        .logo .o2{ color:#F4B400; } /* yellow */
+        .logo .g2{ color:#4285F4; } /* blue */
+        .logo .l { color:#0F9D58; } /* green */
+        .logo .e { color:#DB4437; } /* red */
+        form{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .search-row{
+            width: min(90%, 640px);
+            display:flex;
+            align-items:center;
+            background: #fff;
+            border:1px solid var(--input-border);
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            padding:10px 14px;
+            border-radius:24px;
+            gap:8px;
+        }
+        .search-icon{
+            width:20px;height:20px;flex:0 0 20px;opacity:.6;
+        }
+        .search-input{
+            border:0;
+            outline:0;
+            font-size:18px;
+            flex:1;
+            padding:8px 6px;
+            min-width:0;
+        }
+        .buttons{
+            margin-top:18px;
+            display:flex;
+            gap:8px;
+            justify-content:center;
+        }
+        .btn{
+            background:var(--btn-bg);
+            border:1px solid var(--btn-border);
+            padding:10px 16px;
+            border-radius:4px;
+            font-size:14px;
+            cursor:pointer;
+            color:#3c4043;
+        }
+        .btn:active{ transform:translateY(1px); }
+        footer{
+            border-top:1px solid #eee;
+            padding:12px 24px;
+            font-size:14px;
+            color:var(--muted);
+            display:flex;
+            justify-content:space-between;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .links{ display:flex; gap:12px; align-items:center; }
+        @media (max-width:420px){
+            .logo{ font-size:56px; margin-bottom:18px; }
+            .search-row{ padding:8px; border-radius:20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <main>
+            <div class="center" role="main">
+                <div class="logo" aria-hidden="true">
+                    <span class="g1">G</span>
+                    <span class="o1">o</span>
+                    <span class="o2">o</span>
+                    <span class="g2">g</span>
+                    <span class="l">l</span>
+                    <span class="e">e</span>
+                </div>
+
+                <form id="searchForm" action="https://www.google.com/search" method="GET" target="_self" role="search" onsubmit="return submitSearch(event)">
+                    <div class="search-row" aria-hidden="false">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M21 21l-4.35-4.35" stroke="#5f6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="11" cy="11" r="6" stroke="#5f6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <label for="q" class="sr-only" style="position:absolute;left:-9999px;">Search</label>
+                        <input id="q" name="q" class="search-input" type="search" autocomplete="off" placeholder="Search Google or type a URL" />
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M3 12h18" stroke="#e0e0e0" stroke-width="1" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <div class="buttons" role="group" aria-label="Search actions">
+                        <button type="submit" class="btn">Google Search</button>
+                        <button type="button" class="btn" onclick="feelingLucky()">I'm Feeling Lucky</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="links">
+                <span>Country: United States</span>
+            </div>
+            <div class="links">
+                <a href="https://www.google.com/preferences" style="color:inherit;text-decoration:none;">Settings</a>
+                <a href="https://www.google.com/intl/en/contact/" style="color:inherit;text-decoration:none;">About</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function submitSearch(e){
+            // allow empty query to go to google home
+            var q = document.getElementById('q').value.trim();
+            if (!q) return true;
+            // normal form submission to Google works because input name="q"
+            return true;
+        }
+
+        function feelingLucky(){
+            var q = document.getElementById('q').value.trim();
+            // If empty, go to Google's doodles page as a playful default
+            if (!q){
+                window.location.href = "https://www.google.com/doodles";
+                return;
+            }
+            // Use Google's "I'm Feeling Lucky" param - modern Google may still honour btnI
+            var url = "https://www.google.com/search?btnI=1&q=" + encodeURIComponent(q);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

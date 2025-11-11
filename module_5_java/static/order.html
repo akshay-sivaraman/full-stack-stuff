@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Order</title>        
+    </head>
+    <body>
+        <h1>
+            Order
+            <!-- HTML5 -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16"> <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/> <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/> </svg>
+        </h1>
+        <p>
+            <h2>Create Order</h2>
+            <form>
+                <table border="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td width="20%"><b>Oid</b></td>
+                            <!-- HTML5 -->
+                            <td width="80%"><input type="text" placeholder="Enter order id" required="true" id="Oid" name="Oid" style="width: 300px"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Ocustomer</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <select required="true" name="Ocustomer" id="Ocustomer">
+                                    <option value="">--Select a Customer --</option>
+                                    <option value="C001">C001</option>
+                                    <option value="C002">C002</option>
+                                    <option value="C003">C003</option>
+                                    <option value="C004">C004</option>
+                                    <option value="C005">C005</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Obook</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <select required="true" name="Obook" id="Obook">
+                                    <option value="">--Select a Book --</option>
+                                    <option value="B001">B001</option>
+                                    <option value="B002">B002</option>
+                                    <option value="B003">B003</option>
+                                    <option value="B004">B004</option>
+                                    <option value="B005">B005</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Oquantity</b></td>
+                            <!-- HTML5 -->
+                            <td><input type="number" min="1" max="10" step="1" required="true" name="Oquantity" id="Oquantity" style="width: 50px;" /></td>
+                        </tr>
+                        <tr>
+                            <td><b>Oaddress</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <textarea required="true" name="Oaddress" id="Oaddress" cols="60" rows="4"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Odate</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <input type="date" id="Odate" name="Odate" required="true" min="2022-01-01" max="2025-10-01" />
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td colspan="2" style="text-align: center;"><input type="reset" value="Clear" /> <input type="submit" value="Create/Update" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </p>
+        <hr />
+        <p>
+            <h2>View All Orders</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Oid</th>
+                        <th>Ocustomer</th>
+                        <th>Obook</th>
+                        <th>Oquantity</th>
+                        <th>Oaddress</th>
+                        <th>Odate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>O001</td>
+                        <td>C002</td>
+                        <td>B004</td>
+                        <td>3</td>
+                        <td>123 Main St, City A</td>
+                        <td>2024-12-15</td>                        
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>O002</td>
+                        <td>C005</td>
+                        <td>B002</td>
+                        <td>2</td>
+                        <td>456 Elm St, City B</td>
+                        <td>2024-12-16</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>O003</td>
+                        <td>C001</td>
+                        <td>B003</td>
+                        <td>5</td>
+                        <td>789 Oak St, City C</td>
+                        <td>2024-12-17</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>O004</td>
+                        <td>C004</td>
+                        <td>B005</td>
+                        <td>4</td>
+                        <td>101 Pine St, City D</td>
+                        <td>2024-12-18</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>O005</td>
+                        <td>C003</td>
+                        <td>B001</td>
+                        <td>3</td>
+                        <td>222 Maple St, City E</td>
+                        <td>2024-12-19</td>
+                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align: center;">
+                            ......
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <hr /
+        <p>
+            <a href="./index.html">Home</a>
+        </p>
+    </body>
+</html>

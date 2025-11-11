@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Book</title>
+        <script type="text/javascript" src="scripts/book.js">
+            
+        </script>
+    </head>
+    <body onload="loadPage()">
+        <h1>
+            Book
+            <!-- HTML5 -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16"> <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/> </svg>
+        </h1>
+        <p>
+            <h2>Create/Update Book</h2>
+            <form id="bookForm" onsubmit="return createUpdateBook();">
+                <table border="1" width="100%" >
+                    <tbody>
+                        <tr>
+                            <td width="20%"><b>Bid</b></td>
+                            <!-- HTML5 -->
+                            <td width="80%"><input type="text" placeholder="Enter book id" required="true" id="Bid" name="Bid" style="width: 300px"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Bname</b></td>
+                            <!-- HTML5 -->
+                            <td><input type="text" placeholder="Enter book name" required="true" id="Bname" name="Bname" style="width: 300px"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Bpd</b></td>
+                            <td>
+                                <!-- HTML5 -->
+                                <input type="date" id="Bpd" name="Bpd" required="true" min="1990-01-01" max="2025-10-01" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Bcountry</b></td>
+                            <td>
+                                <select name="Bcountry" id="Bcountry">
+                                    <option value="USA">USA</option>
+                                    <option value="England">England</option>
+                                    <option value="UK">UK</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="Brazil">Brazil</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Bprice</b></td>
+                            <!-- HTML5 -->
+                            <td><input type="number" min="0" step="0.01" id="Bprice" name="Bprice" style="width: 100px"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;"><input type="reset" value="Clear" /> <input  type="submit" value="Create/Update" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </p>
+        <hr />
+        <p>
+            <h2>View All Books</h2>
+            <table id="booksTable" border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Bid</th>
+                        <th>Bname</th>
+                        <th>Bpd</th>
+                        <th>Bcountry</th>
+                        <th>Bprice</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </p>
+        <hr />
+        <p>
+            <a href="./index.html">Home</a>
+        </p>
+        
+    </body>
+</html>
